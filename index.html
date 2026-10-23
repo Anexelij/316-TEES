@@ -1,50 +1,229 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; media-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
-<meta name="referrer" content="strict-origin-when-cross-origin">
-<meta name="description" content="316 TEES: faith-inspired streetwear. Wear your message boldly.">
-<title>316 TEES</title>
-<link rel="icon" type="image/png" href="assets/img/favicon.png">
-<link rel="stylesheet" href="css/styles.css">
-</head><body>
-<svg width="0" height="0" class="sprite" aria-hidden="true"><symbol id="tee" viewBox="0 0 100 100"><path d="M34 12 16 24 4 44l16 8 8-9v45h44V43l8 9 16-8-12-20-18-12c-3 7-9 10-16 10s-13-3-16-10Z" fill="currentColor"/></symbol></svg>
-<nav class="glass" id="nav"><a class="logo" href="#home" aria-label="316 TEES home"><img src="assets/img/logo.png" alt="316 TEES"></a>
-<div class="right"><div class="links" id="links"><a href="#shop">SHOP</a><a href="#gallery">GALLERY</a><a href="#size-guide">SIZE GUIDE</a><a href="#about">ABOUT</a><a href="#contact">CONTACT</a></div>
-<button class="cart" id="cart" aria-label="Cart, empty"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1.2 11.2a1.5 1.5 0 0 1-1.5 1.3H7.7a1.5 1.5 0 0 1-1.5-1.3L5 8Z"/><path d="M9 10V7a3 3 0 0 1 6 0v3"/></svg><span class="bd" id="cn" hidden>0</span></button><button class="menu" id="menu" aria-expanded="false" aria-label="Menu">MENU</button></div></nav>
-<main id="main" tabindex="-1">
-<div class="page" data-p="home">
-<div class="hero-wrap"><section class="hero" id="hero" aria-label="316 TEES"><video class="hv" poster="assets/img/hero.jpg" src="assets/video/hero.mp4" autoplay muted loop playsinline preload="auto" aria-hidden="true" tabindex="-1"></video><div class="hc"><h1><span class="l"><span class="d0">WEAR YOUR</span></span><span class="l"><span class="d1">MESSAGE BOLDLY</span></span></h1><div class="row"><a class="btn" href="#shop">Shop the drop</a><a class="btn line" href="#about">Our story</a></div></div></section></div>
-<div class="after">
-<section class="sec" aria-label="Shop preview"><div class="sh"><h2>Shop</h2><a class="btn" href="#shop">Shop all</a></div><div class="grid" id="hgrid"></div></section>
-<section class="sec" aria-label="Gallery preview"><div class="sh"><h2>Gallery</h2><a class="btn" href="#gallery">View gallery</a></div><div class="mq"><div class="mq-t" id="mqt"></div></div></section>
-<section class="band mt"><h2>Faith, worn without noise.</h2><a class="btn" href="#about">Our story</a></section></div></div>
-<div class="page pad" data-p="shop"><h1>Shop</h1><p class="lead">Three heavyweight tees: black, forest green and white. The 316 TEES logo on the front, a small mark at the back neck.</p><div class="grid" id="grid"></div></div>
-<div class="page pad" data-p="product"><a class="back" href="#shop">&larr; Back to shop</a><div class="pdp" id="pdp"></div></div>
-<div class="page pad" data-p="gallery"><h1>Gallery</h1><p class="lead">The lookbook. Photography by Samwell Pixels.</p><div class="mas" id="mas"></div></div>
-<div class="page pad" data-p="size-guide"><a class="back" id="sgb" href="#shop" hidden>&larr; Back</a><h1>Size guide</h1><p class="lead">Measurements are body measurements in cm. Between sizes? Size up for a boxy fit.</p>
-<div class="two"><div><h3>Tees</h3><div class="tw"><table><tr><th>Size</th><th>Chest</th><th>Length</th></tr><tr><td>S</td><td>92&ndash;97</td><td>69</td></tr><tr><td>M</td><td>97&ndash;102</td><td>71</td></tr><tr><td>L</td><td>102&ndash;108</td><td>73</td></tr><tr><td>XL</td><td>108&ndash;114</td><td>75</td></tr><tr><td>XXL</td><td>114&ndash;120</td><td>77</td></tr></table></div>
-<h3>How to measure</h3><p class="lead mt8">Wrap a tape around the fullest part of your chest, under your arms, keeping it level and snug but not tight.</p></div>
-<div class="finder"><h3 class="mb16">Find your size</h3><label for="ch">Chest (cm)</label><input id="ch" type="number" min="70" max="140" placeholder="e.g. 100"><output id="fs" aria-live="polite">&ndash;</output></div></div></div>
-<div class="page pad about" data-p="about"><h1>About</h1><div class="two"><div><p class="lead">316 Tees was birthed from (John 3:16), this subtly suggests wearing and living out one’s faith without being overly explicit.</p>
-<p>We believe clothing is more than fabric, it is a platform for purpose. Every piece is designed to inspire confidence, and remind people that what they wear can reflect what they stand for.</p>
-<p>This is the foundation of the 316 identity, reminding people that the greatest message ever shared is one of God’s love and salvation.</p>
-<h3>Mission statement</h3><p>To create high-quality, comfortable, and stylish apparel that empowers people to express their faith, values, and identity with confidence. We are committed to excellence, authenticity, and inspiring boldness through every piece we produce.</p>
-<h3>Vision statement</h3><p>To become a leading faith-inspired apparel brand that transforms everyday clothing into a powerful expression of purpose, inspiring people across communities and generations to wear their message boldly.</p>
-<a class="btn" href="#shop">Shop the collection</a></div><img id="aimg" alt="Model pointing to the 316 TEES logo on his tee"></div></div>
-<div class="page pad" data-p="contact"><h1>Contact</h1><p class="lead">Orders, collaborations or questions. Send a message and we&rsquo;ll reply within two working days.</p>
-<div class="two"><form id="cf" novalidate><div class="hp-f" aria-hidden="true"><label for="cfh">Leave this field empty</label><input id="cfh" tabindex="-1" autocomplete="off"></div><label for="n">Name</label><input id="n" required maxlength="60" autocomplete="name"><label for="e">Email</label><input id="e" type="email" required maxlength="120" autocomplete="email"><label for="t">Topic</label><select id="t"><option>Order help</option><option>Sizing</option><option>Collaboration</option><option>Other</option></select><label for="m">Message</label><textarea id="m" required maxlength="1000"></textarea><button class="btn" type="submit">Send message</button><div class="msg" id="cm" aria-live="polite"></div></form>
-<div><h3 class="mb12">Reach us</h3><p>Email: <a class="ul" id="mailus" href="#contact">Send us an email</a></p><p>Instagram: <a href="https://www.instagram.com/316_tees?igsi=aW4xdzdqODA5ZWxq" target="_blank" rel="noopener noreferrer" class="ul">@316tees</a></p><p>TikTok: <a href="https://www.tiktok.com/@316.tees?_r=1&amp;_t=ZS-9APTK7MAoVQ" target="_blank" rel="noopener noreferrer" class="ul">@316.tees</a></p></div></div></div>
-<div class="page pad" data-p="cart"><a class="back" href="#shop">&larr; Continue shopping</a><h1 id="ch">Cart</h1>
-<div id="cempty" hidden><p class="lead">Your cart is empty. Pick a tee and it will show up here.</p><a class="btn" href="#shop">Browse the shop</a></div>
-<div class="cgrid" id="cg"><div id="cl"></div>
-<aside class="csum" aria-label="Cart summary"><h2>Cart summary</h2><div class="sr"><span>Subtotal</span><b id="cs"></b></div><p class="note">Delivery fee is confirmed by our team when we process your order.</p>
-<label for="ordn">Full name</label><input id="ordn" maxlength="80" autocomplete="name"><label for="ordp">Phone number</label><input id="ordp" type="tel" maxlength="20" autocomplete="tel"><label for="orda">Delivery address</label><textarea id="orda" maxlength="250" autocomplete="street-address"></textarea>
-<a class="btn wide" id="wa" href="#cart" target="_blank" rel="noopener noreferrer">Order on WhatsApp</a><a class="btn wide dk" id="em" href="#cart">Order by email</a><div class="msg" id="cmsg" aria-live="polite"></div></aside></div></div>
-</main>
-<footer><div class="glass"><div><img src="assets/img/logo.png" alt="316 TEES"><p>For God so loved the world. Faith worn without noise.</p><div class="soc"><a href="https://www.instagram.com/316_tees?igsi=aW4xdzdqODA5ZWxq" target="_blank" rel="noopener noreferrer" aria-label="316 TEES on Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a><a href="https://www.tiktok.com/@316.tees?_r=1&amp;_t=ZS-9APTK7MAoVQ" target="_blank" rel="noopener noreferrer" aria-label="316 TEES on TikTok"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a></div></div>
-<div><h3>Explore</h3><ul><li><a href="#shop">Shop</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#size-guide">Size guide</a></li></ul></div>
-<div><h3>Company</h3><ul><li><a href="#about">About</a></li><li><a href="#contact">Contact</a></li></ul></div><div class="copy">&copy; 2026 316 TEES. All rights reserved.</div></div></footer>
-<script src="js/lenis.min.js"></script>
-<script src="js/app.js"></script>
-</body></html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; media-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="description" content="316 TEES: faith-inspired streetwear. Wear your message boldly.">
+  <meta name="theme-color" content="#0a0a0a">
+  <title>316 TEES</title>
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <link rel="preload" href="assets/fonts/CabinetGrotesk-Bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ============ NAVBAR ============ -->
+  <nav class="site-nav glass" aria-label="Main">
+    <a class="nav-logo" href="#home" aria-label="316 TEES home"><img src="assets/img/logo.png" alt="316 TEES"></a>
+    <div class="nav-right">
+      <div class="nav-links" id="nav-links">
+        <a href="#shop">SHOP</a>
+        <a href="#gallery">GALLERY</a>
+        <a href="#size-guide">SIZE GUIDE</a>
+        <a href="#about">ABOUT</a>
+        <a href="#contact">CONTACT</a>
+      </div>
+      <button class="cart-btn" id="cart-btn" type="button" aria-label="Cart, empty">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M5 8h14l-1.2 11.2a1.5 1.5 0 0 1-1.5 1.3H7.7a1.5 1.5 0 0 1-1.5-1.3L5 8Z"/>
+          <path d="M9 10V7a3 3 0 0 1 6 0v3"/>
+        </svg>
+        <span class="cart-badge" id="cart-badge" hidden>0</span>
+      </button>
+      <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="nav-links">MENU</button>
+    </div>
+  </nav>
+
+  <main id="main" tabindex="-1">
+    <noscript><p class="page-pad lead">Please turn on JavaScript to browse the shop.</p></noscript>
+
+    <!-- ============ HOME ============ -->
+    <div class="page" data-page="home">
+      <div class="hero-wrap">
+        <section class="hero" id="hero" aria-label="316 TEES">
+          <video class="hero-video" src="assets/video/hero.mp4" autoplay muted loop playsinline preload="auto" aria-hidden="true" tabindex="-1"></video>
+          <div class="hero-content">
+            <h1 class="hero-title" id="hero-title">
+              <span class="line"><span>WEAR YOUR</span></span>
+              <span class="line"><span>MESSAGE BOLDLY</span></span>
+            </h1>
+            <div class="hero-actions">
+              <a class="btn" href="#shop">Shop the drop</a>
+              <a class="btn btn--line" href="#about">Our story</a>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="after">
+        <section class="section" aria-label="Shop preview">
+          <div class="section-head"><h2>Shop</h2><a class="btn" href="#shop">Shop all</a></div>
+          <div class="product-grid product-grid--preview" id="home-grid"></div>
+        </section>
+        <section class="section" aria-label="Gallery preview">
+          <div class="section-head"><h2>Gallery</h2><a class="btn" href="#gallery">View gallery</a></div>
+          <div class="marquee" id="marquee"><div class="marquee-track" id="marquee-track"></div></div>
+        </section>
+        <section class="band">
+          <h2>Faith, worn without noise.</h2>
+          <a class="btn" href="#about">Our story</a>
+        </section>
+      </div>
+    </div>
+
+    <!-- ============ SHOP ============ -->
+    <div class="page page-pad" data-page="shop">
+      <h1>Shop</h1>
+      <p class="lead">Three heavyweight tees: black, forest green and white. The 316 TEES logo on the front, a small mark at the back neck.</p>
+      <div class="product-grid" id="shop-grid"></div>
+    </div>
+
+    <!-- ============ PRODUCT ============ -->
+    <div class="page page-pad" data-page="product">
+      <a class="back-link" href="#shop">&larr; Back to shop</a>
+      <div class="pdp" id="product-view"></div>
+    </div>
+
+    <!-- ============ GALLERY ============ -->
+    <div class="page page-pad" data-page="gallery">
+      <h1>Gallery</h1>
+      <p class="lead">The lookbook. Photography by Samwell Pixels.</p>
+      <div class="masonry" id="gallery-grid"></div>
+    </div>
+
+    <!-- ============ SIZE GUIDE ============ -->
+    <div class="page page-pad" data-page="size-guide">
+      <a class="back-link" id="size-back" href="#shop" hidden>&larr; Back</a>
+      <h1>Size guide</h1>
+      <p class="lead">Measurements are body measurements in cm. Between sizes? Size up for a boxy fit.</p>
+      <div class="split">
+        <div>
+          <h3>Tees</h3>
+          <div class="table-scroll">
+            <table>
+              <thead><tr><th>Size</th><th>Chest</th><th>Length</th></tr></thead>
+              <tbody id="size-rows"></tbody>
+            </table>
+          </div>
+          <h3>How to measure</h3>
+          <p class="lead lead--tight">Wrap a tape around the fullest part of your chest, under your arms, keeping it level and snug but not tight.</p>
+        </div>
+        <div class="finder">
+          <h3>Find your size</h3>
+          <label for="chest-input">Chest (cm)</label>
+          <input id="chest-input" type="number" min="70" max="140" placeholder="e.g. 100">
+          <output id="size-result" aria-live="polite">&ndash;</output>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ ABOUT ============ -->
+    <div class="page page-pad about" data-page="about">
+      <h1>About</h1>
+      <div class="split">
+        <div>
+          <p class="lead">316 Tees was birthed from (John 3:16), this subtly suggests wearing and living out one’s faith without being overly explicit.</p>
+          <p>We believe clothing is more than fabric, it is a platform for purpose. Every piece is designed to inspire confidence, and remind people that what they wear can reflect what they stand for.</p>
+          <p>This is the foundation of the 316 identity, reminding people that the greatest message ever shared is one of God’s love and salvation.</p>
+          <h3>Mission statement</h3>
+          <p>To create high-quality, comfortable, and stylish apparel that empowers people to express their faith, values, and identity with confidence. We are committed to excellence, authenticity, and inspiring boldness through every piece we produce.</p>
+          <h3>Vision statement</h3>
+          <p>To become a leading faith-inspired apparel brand that transforms everyday clothing into a powerful expression of purpose, inspiring people across communities and generations to wear their message boldly.</p>
+          <a class="btn" href="#shop">Shop the collection</a>
+        </div>
+        <img id="about-photo" alt="">
+      </div>
+    </div>
+
+    <!-- ============ CONTACT ============ -->
+    <div class="page page-pad" data-page="contact">
+      <h1>Contact</h1>
+      <p class="lead">Orders, collaborations or questions. Send a message and we’ll reply within two working days.</p>
+      <div class="split">
+        <form id="contact-form" novalidate>
+          <div class="hp-field" aria-hidden="true">
+            <label for="contact-trap">Leave this field empty</label>
+            <input id="contact-trap" tabindex="-1" autocomplete="off">
+          </div>
+          <label for="contact-name">Name</label>
+          <input id="contact-name" required maxlength="60" autocomplete="name">
+          <label for="contact-email">Email</label>
+          <input id="contact-email" type="email" required maxlength="120" autocomplete="email">
+          <label for="contact-topic">Topic</label>
+          <select id="contact-topic"><option>Order help</option><option>Sizing</option><option>Collaboration</option><option>Other</option></select>
+          <label for="contact-message">Message</label>
+          <textarea id="contact-message" required maxlength="1000"></textarea>
+          <button class="btn" type="submit">Send message</button>
+          <div class="form-msg" id="contact-msg" aria-live="polite"></div>
+        </form>
+        <div>
+          <h3>Reach us</h3>
+          <p>Email: <a class="link-underline" id="mail-link" href="#contact">Send us an email</a></p>
+          <p>Instagram: <a class="link-underline" href="https://www.instagram.com/316_tees?igsi=aW4xdzdqODA5ZWxq" target="_blank" rel="noopener noreferrer">@316tees</a></p>
+          <p>TikTok: <a class="link-underline" href="https://www.tiktok.com/@316.tees?_r=1&amp;_t=ZS-9APTK7MAoVQ" target="_blank" rel="noopener noreferrer">@316.tees</a></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ CART ============ -->
+    <div class="page page-pad" data-page="cart">
+      <a class="back-link" href="#shop">&larr; Continue shopping</a>
+      <h1 id="cart-title">Cart</h1>
+      <div id="cart-empty" hidden>
+        <p class="lead">Your cart is empty. Pick a tee and it will show up here.</p>
+        <a class="btn" href="#shop">Browse the shop</a>
+      </div>
+      <div class="cart-layout" id="cart-layout">
+        <div id="cart-lines"></div>
+        <aside class="summary" aria-label="Cart summary">
+          <h2>Cart summary</h2>
+          <div class="summary-row"><span>Subtotal</span><b id="cart-subtotal"></b></div>
+          <p class="note">Delivery fee is confirmed by our team when we process your order.</p>
+          <label for="order-name">Full name</label>
+          <input id="order-name" maxlength="80" autocomplete="name">
+          <label for="order-phone">Phone number</label>
+          <input id="order-phone" type="tel" maxlength="20" autocomplete="tel">
+          <label for="order-address">Delivery address</label>
+          <textarea id="order-address" maxlength="250" autocomplete="street-address"></textarea>
+          <a class="btn btn--wide" id="order-whatsapp" href="#cart" target="_blank" rel="noopener noreferrer">Order on WhatsApp</a>
+          <a class="btn btn--wide btn--dark" id="order-email" href="#cart">Order by email</a>
+          <div class="form-msg" id="order-msg" aria-live="polite"></div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="glass footer-grid">
+      <div>
+        <img class="footer-logo" src="assets/img/logo.png" alt="316 TEES">
+        <p>For God so loved the world. <span class="tagline-end">Faith worn without noise.</span></p>
+        <div class="social">
+          <a href="https://www.instagram.com/316_tees?igsi=aW4xdzdqODA5ZWxq" target="_blank" rel="noopener noreferrer" aria-label="316 TEES on Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://www.tiktok.com/@316.tees?_r=1&amp;_t=ZS-9APTK7MAoVQ" target="_blank" rel="noopener noreferrer" aria-label="316 TEES on TikTok">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h3>Explore</h3>
+        <ul><li><a href="#shop">Shop</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#size-guide">Size guide</a></li></ul>
+      </div>
+      <div>
+        <h3>Company</h3>
+        <ul><li><a href="#about">About</a></li><li><a href="#contact">Contact</a></li></ul>
+      </div>
+      <div class="copy">&copy; 2026 316 TEES. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script src="js/vendor/lenis.min.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
