@@ -1,33 +1,44 @@
 # 316 TEES website
 
-Static site: no build step, no database, no third-party scripts.
+Plain HTML, CSS and JavaScript. No build step, no database, no server code.
 
-```
-index.html          all pages (hash routes: #shop, #gallery, #size-guide, #about, #contact, #cart)
-css/styles.css      all styling
-js/app.js           shop, cart, ordering, gallery, hero video
-js/lenis.min.js     smooth scroll (self-hosted, v1.1.13)
-assets/             logo, product and model photos, fonts, hero video
-_headers            security headers (Netlify, Cloudflare Pages)
-vercel.json         same headers for Vercel
-.well-known/security.txt
-```
+## Folders
+- `index.html` – all pages (Home, Shop, Product, Gallery, Size guide, About, Contact, Cart)
+- `css/styles.css` – all styling, including the phone layout
+- `js/data.js` – **edit this** for prices, product text, sizes, contact details
+- `js/app.js` – pages, cart, order messages, hero, gallery strip, forms
+- `js/vendor/lenis.min.js` – smooth scrolling (MIT licence), hosted on your own site
+- `assets/` – images, hero video (no sound) and Cabinet Grotesk fonts
+- `_headers` (Netlify / Cloudflare Pages) or `.htaccess` (Apache / cPanel) – security headers. **Use only the one that matches your host.**
+- `.well-known/security.txt`, `robots.txt`
 
-## Deploy
-Upload the whole folder to Netlify, Cloudflare Pages or Vercel (all give free HTTPS). The headers file only works on those hosts. On nginx or Apache, copy the same headers from `_headers` into the server config.
+## Run it on your computer
+`python3 -m http.server 8000` inside this folder, then open http://localhost:8000
 
-## Security built in
-- **Content Security Policy:** only this site's own files can load or run. No inline scripts, no inline styles, no outside connections. A page-injected script is blocked.
-- **No third-party code:** Lenis and the fonts are self-hosted, so a hacked CDN cannot reach the site.
-- **Security headers:** HTTPS-only (HSTS), no framing (clickjacking), no content-type guessing, strict referrer and permissions policies.
-- **Cart and forms:** stored cart data is re-validated on load (sizes, quantities, item limits), all typed text is cleaned and length-limited before it goes into an order message, router input is whitelisted.
-- **Spam:** hidden honeypot field, 3-second minimum fill time and a 30-second send limit on the contact form. Emails and the WhatsApp number are assembled in code, so simple scrapers do not find them.
-- **Links:** every new-tab link uses `noopener noreferrer`.
+## Publish it
+Upload the folder to Netlify, Cloudflare Pages or any cPanel host (HTTPS must be on).
+Pages use `#` addresses (for example `/#shop`). When you move to Next.js, give each page its own route.
 
-## What this cannot do alone
-Browser-side checks can be bypassed by a bot that skips the page. Before the contact form sends real messages, or before taking payments:
-1. Send form data to a server or form service, and verify a Cloudflare Turnstile (or reCAPTCHA) token there.
-2. Put the domain behind Cloudflare (free WAF, bot and DDoS protection).
-3. Turn on 2-factor login for the host, domain registrar, email, WhatsApp, Instagram and TikTok accounts. Most real attacks start with a stolen password.
-4. Use Paystack's hosted checkout for payments. Never store card details yourself.
-5. Keep the order inbox and WhatsApp account locked down: orders include customers' names, phones and addresses.
+## Security measures built in
+- **Strict Content-Security-Policy** (in `index.html`): only your own files can load. No outside scripts, styles, fonts or images, no inline code, no network calls, no plugins, no form posts.
+- **Everything is self-hosted**, including the font and the scroll library, so a hacked outside server cannot inject code.
+- **No `innerHTML` anywhere.** Names, sizes, addresses and stored cart data are added as plain text only.
+- **Cart data from the browser is treated as untrusted**: every line is re-checked (product, size, quantity limits).
+- **Router whitelist**: unknown or tampered `#` addresses fall back to Home.
+- **Order messages**: inputs are cleaned (no control characters or `<>`), length-limited and URL-encoded. Phone numbers are format-checked.
+- **Spam guards on the Contact form**: hidden trap field, minimum fill time, and a 30-second send limit.
+- **Headers** (`_headers` / `.htaccess`): HTTPS only (HSTS), blocks being embedded in other sites (clickjacking), `nosniff`, strict referrer policy, camera/microphone/location disabled, cross-origin isolation.
+- **Outside links** open with `noopener noreferrer`.
+- **Hidden files, backups and folder listings** are blocked on Apache.
+
+## What a static site cannot do (be honest with yourself)
+- Browser-side spam checks only slow simple bots. The Contact form does not send anywhere yet. When you connect it (Formspree, Netlify Forms, your own API) add a server-side check such as Cloudflare Turnstile, and validate everything again on the server.
+- Orders are only messages: nothing is recorded until the customer presses Send in WhatsApp or email. Add Paystack plus an order database when volume grows, and never put secret keys in this folder.
+- The cart is saved in the visitor's own browser.
+
+## Keep your accounts safe (most real attacks target these)
+1. Turn on two-step login for your host, domain registrar, Instagram, TikTok, WhatsApp and the connect316tees@gmail.com mailbox.
+2. Use long unique passwords from a password manager. Lock the domain at the registrar.
+3. Put the domain behind Cloudflare (free plan) for DDoS protection and bot filtering.
+4. Replace `Expires` in `.well-known/security.txt` every year.
+5. After editing, check the site at securityheaders.com and the CSP in your browser's console.

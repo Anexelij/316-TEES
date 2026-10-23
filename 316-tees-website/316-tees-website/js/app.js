@@ -1,76 +1,467 @@
-if(window.top!==window.self){try{window.top.location=window.self.location}catch(e){document.documentElement.hidden=true}}
-(function(){
-var M=["connect316tees","gmail.com"].join("@"),WN=["234","907","497","1209"].join("");
-function cl(v,n){return String(v).replace(/[\u0000-\u001f\u007f<>]/g," ").replace(/\s+/g," ").trim().slice(0,n)}
-var I={bb:"assets/img/black-back.jpg",gb:"assets/img/green-back.jpg",wb:"assets/img/white-back.jpg",b:"assets/img/black-front.jpg",g:"assets/img/green-front.jpg",w:"assets/img/white-front.jpg",p:["assets/img/model-1.jpg","assets/img/model-2.jpg","assets/img/model-3.jpg","assets/img/model-4.jpg"]};
-var A=["Model pointing to the 316 TEES logo on a navy tee","Model seated on a stool in a navy 316 TEES tee","Model standing in a navy 316 TEES tee and grey trousers","Back of a navy tee printed Wear your message boldly"];
-var P=[["ONYX BLACK",28000,I.b,"ONYX BLACK tee, front view",I.bb,"ONYX BLACK tee, back view","Sleek, bold, and modern. Onyx is a heavyweight descriptor often used in high-end streetwear and luxury brands to denote a deep, impenetrable black.","The onyx stone was one of the precious stones set firmly into the breastpiece of the High Priest, bearing the names of God’s people over his heart (Exodus 28). For this verse, Onyx Black represents the weight and depth of the phrase “For God so loved the world.” It stands for the dark, fallen state of the world that Christ stepped into, and the firm, unmovable foundation of God’s love that reaches us even in our darkest moments."],["EVERGREEN",28000,I.g,"EVERGREEN tee, front view",I.gb,"EVERGREEN tee, back view","A timeless, rich dark green that works beautifully across all seasons. It implies durability and staple wardrobe pieces.","Green is the universal color of life and flourishing. Evergreen specifically represents foliage that never dies or fades, no matter the season or harshness of winter. This ties directly to the culminating promise of John 3:16: “but have eternal life.” It is the color of the believer’s enduring soul, rooted in Christ, promised a life that will never perish."],["ALABASTER WHITE",26000,I.w,"ALABASTER WHITE tee, front view",I.wb,"ALABASTER WHITE tee, back view","Sounds premium, pure, and intentional. It moves away from standard, flat white into something that feels historically rich and high-quality.","Alabaster references the precious, costly perfume poured out in absolute devotion to Jesus (Mark 14:3). In the context of John 3:16, Alabaster White represents the pure, unblemished nature of the “one and only Son” who was given. It also symbolizes the washing away of sin: the cleansing grace that ensures whoever believes “shall not perish.” It is the color of the ultimate, costly sacrifice made out of love."]];
-var $=function(i){return document.getElementById(i)},rm=matchMedia("(prefers-reduced-motion:reduce)").matches,fine=matchMedia("(hover:hover) and (pointer:fine)").matches,n=0,sz=null,L=null;
-function card(p,i,st){var a=document.createElement("div");a.className="card"+(st?" in":"");a.style.setProperty("--d",i);a.innerHTML='<a class="il" href="#product-'+i+'"><div class="img"><img src="'+p[2]+'" alt="'+p[3]+'"><div class="det"><img src="'+p[4]+'" alt="'+p[5]+'"></div></div></a><div class="meta"><div><a class="sg" href="#size-guide">Size guide</a><br><a class="nm" href="#product-'+i+'">'+p[0]+'</a></div><span>&#8358;'+p[1].toLocaleString("en-NG")+"</span></div>";return a}
-P.forEach(function(p,i){$("hgrid").appendChild(card(p,i,1))});
-var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target)}})},{threshold:.1});
-function shop(){$("grid").innerHTML="";P.forEach(function(p,i){var k=card(p,i,0);$("grid").appendChild(k);io.observe(k)})}
-for(var r=0;r<2;r++)I.p.forEach(function(u,i){var m=document.createElement("img");m.src=u;m.alt=r?"":A[i];if(r)m.setAttribute("aria-hidden","true");$("mqt").appendChild(m)});
-var G=[["p",0],["t","For God so loved","#2c2c2e",220],["p",1],["h"],["p",3],["t","Wear it quietly","#FFBF1C",180,"#111"],["p",2],["t","Live it loud","#1f3a5f",240]];
-G.forEach(function(g){var e;if(g[0]==="p"){e=document.createElement("img");e.src=I.p[g[1]];e.alt=A[g[1]]}else if(g[0]==="h"){e=document.createElement("div");e.className="hp";e.setAttribute("role","img");e.setAttribute("aria-label","Model in black tee and silver sunglasses")}else{e=document.createElement("div");e.className="tile";e.textContent=g[1];e.style.background=g[2];e.style.height=g[3]+"px";if(g[4])e.style.color=g[4]}$("mas").appendChild(e)});
-$("aimg").src=I.p[0];
-function pdp(i){var p=P[i];if(!p){location.hash="shop";return}sz=null;
-$("pdp").innerHTML='<div class="gal"><div class="img"><img src="'+p[2]+'" alt="'+p[3]+'"></div><div class="img"><img src="'+p[4]+'" alt="'+p[5]+'"></div><div class="dsc"><h3>The Fashion Vibe</h3><p>'+p[6]+'</p><h3>The John 3:16 Meaning</h3><p>'+p[7]+'</p></div></div><div class="info"><h1>'+p[0]+'</h1><div class="price">&#8358;'+p[1].toLocaleString("en-NG")+'</div><p>Relaxed, boxy cut with the 316 TEES logo on the front and a small mark at the back neck.</p><a class="sg sgp" href="#size-guide">Size guide</a><div class="sizes" id="sizes" role="group" aria-label="Size"></div><button class="btn atc" id="atc">Add to cart</button><div class="msg" id="msg" aria-live="polite"></div></div>';
-["S","M","L","XL","XXL"].forEach(function(s){var b=document.createElement("button");b.textContent=s;b.setAttribute("aria-pressed","false");b.onclick=function(){sz=s;[].forEach.call($("sizes").children,function(x){x.setAttribute("aria-pressed",x===b)})};$("sizes").appendChild(b)});
-var a=$("atc");a.onclick=function(e){if(!sz){$("msg").textContent="Choose a size first.";return}var r=a.getBoundingClientRect(),d=Math.max(r.width,r.height)/4,s=document.createElement("span");s.className="rip";s.style.cssText="width:"+d+"px;height:"+d+"px;left:"+(e.clientX?e.clientX-r.left-d/2:r.width/2)+"px;top:"+(e.clientX?e.clientY-r.top-d/2:r.height/2)+"px";a.appendChild(s);setTimeout(function(){s.remove()},650);add(i,sz);$("msg").innerHTML="Added: "+p[0]+", size "+sz+". <a href=\"#cart\">View cart</a>"};
-if(fine&&!rm){a.addEventListener("mousemove",function(e){var r=a.getBoundingClientRect();a.style.transform="translate("+(e.clientX-r.left-r.width/2)*.15+"px,"+(e.clientY-r.top-r.height/2)*.3+"px)"});a.addEventListener("mouseleave",function(){a.style.transform=""})}}
-$("ch").oninput=function(){var c=+this.value,s=c<70?"\u2013":c<97?"S":c<102?"M":c<108?"L":c<114?"XL":"XXL";$("fs").textContent=c?s:"\u2013"};
-var t0=Date.now(),lastC=0;
-$("cf").onsubmit=function(e){e.preventDefault();var now=Date.now();
-if($("cfh").value||now-t0<3000){$("cm").textContent="Please try again.";return}
-if(now-lastC<30000){$("cm").textContent="Please wait a little before sending another message.";return}
-if(!this.checkValidity()){$("cm").textContent="Please fill in every field with a valid email.";return}
-lastC=now;$("cm").textContent="Thanks, "+cl($("n").value,60)+". Your message is ready to send once the form is connected.";this.reset()};
-var ml=$("mailus");if(ml){ml.href="mailto:"+M+"?subject="+encodeURIComponent("316 TEES enquiry");ml.textContent=M}
-var C=[];try{C=JSON.parse(localStorage.getItem("316cart")||"[]")}catch(e){C=[]}
-var SZ=["S","M","L","XL","XXL"];C=Array.isArray(C)?C.slice(0,20).map(function(x){return x&&{i:parseInt(x.i,10),s:String(x.s),q:Math.min(10,parseInt(x.q,10)||0)}}).filter(function(x){return x&&P[x.i]&&SZ.indexOf(x.s)>-1&&x.q>0}):[];
-function save(){try{localStorage.setItem("316cart",JSON.stringify(C))}catch(e){}}
-function cnt(){return C.reduce(function(a,x){return a+x.q},0)}
-function tot(){return C.reduce(function(a,x){return a+x.q*P[x.i][1]},0)}
-function fmt(v){return "\u20A6"+v.toLocaleString("en-NG")}
-function badge(){var c=cnt(),b=$("cn");b.textContent=c;b.hidden=!c;$("cart").setAttribute("aria-label",c?"Cart, "+c+(c>1?" items":" item"):"Cart, empty")}
-function add(i,s){var f=C.filter(function(x){return x.i===i&&x.s===s})[0];if(f)f.q=Math.min(10,f.q+1);else if(C.length<20)C.push({i:i,s:s,q:1});save();badge()}
-function order(nl){var L=C.map(function(x,k){return (k+1)+". "+P[x.i][0]+" | Size "+x.s+" | Qty "+x.q+" | "+fmt(x.q*P[x.i][1])});
-return ["Hello 316 TEES, I would like to place an order:","",].concat(L,["","Total: "+fmt(tot())+" (delivery fee not included)","","Name: "+cl($("ordn").value,80),"Phone: "+cl($("ordp").value,20),"Delivery address: "+cl($("orda").value,250)]).join(nl)}
-function links(){$("wa").href="https://wa.me/"+WN+"?text="+encodeURIComponent(order("\n"));$("em").href="mailto:"+M+"?subject="+encodeURIComponent("316 TEES order")+"&body="+encodeURIComponent(order("\r\n"))}
-function renderCart(){var e=!C.length;$("cempty").hidden=!e;$("cg").hidden=e;$("ch").textContent=e?"Cart":"Cart ("+cnt()+")";
-$("cl").innerHTML=C.map(function(x,k){var p=P[x.i];return '<div class="ci"><a href="#product-'+x.i+'"><img src="'+p[2]+'" alt="'+p[3]+'"></a><div class="cd"><a class="nm" href="#product-'+x.i+'">'+p[0]+'</a><small>Size: '+x.s+'</small><div class="cp">'+fmt(x.q*p[1])+(x.q>1?' <small class="ea">('+fmt(p[1])+' each)</small>':'')+'</div></div><div class="cq"><button data-a="dec" data-k="'+k+'" aria-label="Decrease quantity of '+p[0]+'">&minus;</button><span aria-live="polite">'+x.q+'</span><button data-a="inc" data-k="'+k+'" aria-label="Increase quantity of '+p[0]+'">+</button></div><button class="rm" data-a="rm" data-k="'+k+'">Remove</button></div>'}).join("");
-$("cs").textContent=fmt(tot());links();badge()}
-$("cl").addEventListener("click",function(e){var b=e.target.closest("button[data-a]");if(!b)return;var k=+b.dataset.k,x=C[k];if(!x)return;if(b.dataset.a==="inc")x.q=Math.min(10,x.q+1);else if(b.dataset.a==="dec"){x.q--;if(x.q<1)C.splice(k,1)}else C.splice(k,1);save();renderCart()});
-["ordn","ordp","orda"].forEach(function(i){$(i).addEventListener("input",links)});
-[$("wa"),$("em")].forEach(function(a){a.addEventListener("click",function(e){var m=[["ordn","your name"],["ordp","your phone number"],["orda","your delivery address"]].filter(function(f){var v=$(f[0]).value.trim();return !v||(f[0]==="ordp"&&!/^[0-9+()\s-]{7,20}$/.test(v))})[0];
-if(!C.length){e.preventDefault();$("cmsg").textContent="Your cart is empty."}else if(m){e.preventDefault();$("cmsg").textContent="Add "+m[1]+" so we can process your order.";$(m[0]).focus()}else $("cmsg").textContent="Your order message is ready to send. We will confirm availability, delivery fee and payment."})});
-$("cart").onclick=function(){location.hash="cart"};badge();
-(function(){var mq=document.querySelector(".mq"),mt=$("mqt");if(rm||!mq||!mt)return;var pos=0,tp=0,hov=false,drg=false,last=0,lx=0;
-function frame(t){var dt=Math.min(.05,(t-last)/1000||0),w=mt.scrollWidth/2;last=t;if(mt.offsetParent&&w){if(!hov&&!drg)pos+=w/45*dt;var st=tp*.18;pos+=st;tp-=st;pos=((pos%w)+w)%w;mt.style.transform="translate3d("+(-pos)+"px,0,0)"}requestAnimationFrame(frame)}
-requestAnimationFrame(frame);
-mq.addEventListener("pointerenter",function(e){if(e.pointerType==="mouse")hov=true});
-mq.addEventListener("pointerleave",function(e){if(e.pointerType==="mouse")hov=false});
-mq.addEventListener("wheel",function(e){var d=0;if(e.shiftKey)d=e.deltaX||e.deltaY;else if(Math.abs(e.deltaX)>Math.abs(e.deltaY))d=e.deltaX;else return;if(e.deltaMode===1)d*=16;tp+=d;e.preventDefault();e.stopPropagation()},{passive:false});
-mq.addEventListener("pointerdown",function(e){drg=true;lx=e.clientX;mq.classList.add("dr");try{mq.setPointerCapture(e.pointerId)}catch(x){}});
-mq.addEventListener("pointermove",function(e){if(!drg)return;pos-=e.clientX-lx;lx=e.clientX});
-function end(){drg=false;mq.classList.remove("dr")}
-mq.addEventListener("pointerup",end);mq.addEventListener("pointercancel",end);
-mq.addEventListener("dragstart",function(e){e.preventDefault()})})();
-$("menu").onclick=function(){var o=$("links").classList.toggle("open");this.setAttribute("aria-expanded",o)};
-var T={home:"316 TEES",shop:"Shop",gallery:"Gallery","size-guide":"Size guide",about:"About",contact:"Contact",product:"Product",cart:"Cart"};
-var hv=document.querySelector(".hv");
-if(hv){var cx=navigator.connection;if(rm||(cx&&cx.saveData))hv.remove();else{hv.muted=true;var q0=hv.play();if(q0&&q0.catch)q0.catch(function(){})}}
-function hvs(k){if(!hv||!hv.isConnected)return;if(k==="home"){var q=hv.play();if(q&&q.catch)q.catch(function(){})}else hv.pause()}
-function fit(){var h=document.querySelector(".hero h1");if(!h||!h.offsetParent)return;h.style.fontSize="100px";var w=0;[].forEach.call(h.querySelectorAll(".l span"),function(x){w=Math.max(w,x.offsetWidth)});if(!w)return;var pad=h.parentNode.offsetLeft,t=innerWidth<768?innerWidth-2*pad:innerWidth/2-pad;h.style.fontSize=Math.max(26,Math.min(150,100*t/w))+"px"}
-addEventListener("resize",fit);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);
-function route(){var h=location.hash.slice(1)||"home",pr=h.indexOf("product-")===0,k=pr?"product":(Object.prototype.hasOwnProperty.call(T,h)?h:"home");
-[].forEach.call(document.querySelectorAll(".page"),function(p){p.classList.toggle("on",p.dataset.p===k)});
-[].forEach.call($("links").children,function(a){if(a.getAttribute("href")==="#"+(pr?"shop":h))a.setAttribute("aria-current","page");else a.removeAttribute("aria-current")});
-if(pr)pdp(+h.slice(8));if(k==="shop")shop();if(k==="cart")renderCart();if(k==="size-guide"){var b=$("sgb");if(bk){if(!/^#[a-z0-9-]*$/i.test(bk))bk="#shop";b.href=bk;b.innerHTML="&larr; Back to "+(bk.indexOf("#product-")===0?"product":bk==="#shop"?"shop":"home");b.hidden=false}else b.hidden=true}document.title=(k==="home"?"":T[k]+" | ")+"316 TEES";$("links").classList.remove("open");
-if(L)L.scrollTo(0,{immediate:true});else scrollTo(0,0);upd();fit();hvs(k);if(k!=="home")$("main").focus({preventScroll:true})}
-if(window.Lenis&&!rm){L=new Lenis();(function f(t){L.raf(t);requestAnimationFrame(f)})(0)}
-var bk=null;document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("a");if(a)bk=a.classList.contains("sg")?(location.hash||"#home"):null});var hero=$("hero"),tick=false;
-function upd(){tick=false;if(!hero.offsetParent)return;var p=Math.min(1,scrollY/(innerHeight*.8));hero.style.transform="scale("+(1-.1*p)+")";hero.style.opacity=1-p}
-addEventListener("scroll",function(){if(!tick){tick=true;requestAnimationFrame(upd)}},{passive:true});addEventListener("resize",upd);addEventListener("hashchange",route);route();
+/* ==========================================================
+   316 TEES: behaviour
+   1 Setup & helpers   2 Cart   3 Shop views   4 Gallery
+   5 Forms & tools   6 Hero   7 Router & navigation   8 Start
+   Plain scripts, no frameworks. Dynamic text is always added as
+   text (never as markup), so nothing typed or stored can run as code.
+   ========================================================== */
+"use strict";
+
+(function () {
+  // Anti-framing fallback. The real defence is the frame-ancestors header.
+  if (window.top !== window.self) {
+    document.documentElement.hidden = true;
+    return;
+  }
+
+  /* ---------- 1. Setup & helpers ---------- */
+  const { contact, limits, sizeChart, products, models, tiles, gallery } = DATA;
+  const SIZES = sizeChart.map(function (row) { return row.size; });
+  const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const finePointer = matchMedia("(hover: hover) and (pointer: fine)").matches;
+  const $ = function (id) { return document.getElementById(id); };
+
+  // Builds an element safely. Child strings and numbers become text nodes; arrays are flattened.
+  function el(tag, attrs) {
+    const node = document.createElement(tag);
+    Object.keys(attrs || {}).forEach(function (key) {
+      const value = attrs[key];
+      if (value === false || value == null) return;
+      node.setAttribute(key, value === true ? "" : value);
+    });
+    Array.prototype.slice.call(arguments, 2).forEach(function (child) {
+      if (Array.isArray(child)) node.append.apply(node, child); else node.append(child);
+    });
+    return node;
+  }
+  function setChildren(node, children) {
+    node.textContent = "";
+    node.append.apply(node, children);
+  }
+  // Removes control characters and angle brackets, collapses spaces, limits length.
+  function clean(value, max) {
+    return String(value).replace(/[\u0000-\u001f\u007f<>]/g, " ").replace(/\s+/g, " ").trim().slice(0, max);
+  }
+  function money(value) { return "\u20A6" + value.toLocaleString("en-NG"); }
+  function storeGet(key) { try { return localStorage.getItem(key); } catch (e) { return null; } }
+  function storeSet(key, value) { try { localStorage.setItem(key, value); } catch (e) { /* storage blocked */ } }
+  function play(video) { const p = video.play(); if (p && p.catch) p.catch(function () {}); }
+
+  /* ---------- 2. Cart ---------- */
+  const CART_KEY = "316cart";
+  let cart = loadCart();
+
+  // Stored data is untrusted: every line is re-checked before use.
+  function loadCart() {
+    let raw;
+    try { raw = JSON.parse(storeGet(CART_KEY) || "[]"); } catch (e) { raw = []; }
+    if (!Array.isArray(raw)) return [];
+    return raw.slice(0, limits.maxLines).map(function (x) {
+      return x && {
+        product: parseInt(x.product, 10),
+        size: String(x.size),
+        qty: Math.min(limits.maxQty, parseInt(x.qty, 10) || 0),
+      };
+    }).filter(function (x) {
+      return x && products[x.product] && SIZES.indexOf(x.size) > -1 && x.qty > 0;
+    });
+  }
+  function saveCart() { storeSet(CART_KEY, JSON.stringify(cart)); }
+  function cartCount() { return cart.reduce(function (n, l) { return n + l.qty; }, 0); }
+  function cartTotal() { return cart.reduce(function (n, l) { return n + l.qty * products[l.product].price; }, 0); }
+
+  function updateBadge() {
+    const count = cartCount();
+    $("cart-badge").textContent = count;
+    $("cart-badge").hidden = !count;
+    $("cart-btn").setAttribute("aria-label", count ? "Cart, " + count + (count > 1 ? " items" : " item") : "Cart, empty");
+  }
+  function addToCart(product, size) {
+    const line = cart.filter(function (l) { return l.product === product && l.size === size; })[0];
+    if (line) line.qty = Math.min(limits.maxQty, line.qty + 1);
+    else if (cart.length < limits.maxLines) cart.push({ product: product, size: size, qty: 1 });
+    saveCart();
+    updateBadge();
+  }
+
+  // The order text sent to WhatsApp and email.
+  function orderMessage(newline) {
+    const lines = cart.map(function (l, k) {
+      const p = products[l.product];
+      return (k + 1) + ". " + p.name + " | Size " + l.size + " | Qty " + l.qty + " | " + money(l.qty * p.price);
+    });
+    return ["Hello 316 TEES, I would like to place an order:", ""].concat(lines, [
+      "",
+      "Total: " + money(cartTotal()) + " (delivery fee not included)",
+      "",
+      "Name: " + clean($("order-name").value, 80),
+      "Phone: " + clean($("order-phone").value, 20),
+      "Delivery address: " + clean($("order-address").value, 250),
+    ]).join(newline);
+  }
+  function updateOrderLinks() {
+    $("order-whatsapp").href = "https://wa.me/" + contact.whatsapp + "?text=" + encodeURIComponent(orderMessage("\n"));
+    $("order-email").href = "mailto:" + contact.email + "?subject=" + encodeURIComponent("316 TEES order") +
+      "&body=" + encodeURIComponent(orderMessage("\r\n"));
+  }
+  function missingOrderField() {
+    const checks = [
+      ["order-name", "your name", function (v) { return v; }],
+      ["order-phone", "your phone number", function (v) { return /^[0-9+()\s-]{7,20}$/.test(v); }],
+      ["order-address", "your delivery address", function (v) { return v; }],
+    ];
+    return checks.filter(function (c) { return !c[2]($(c[0]).value.trim()); })[0];
+  }
+
+  function cartLine(line, index) {
+    const p = products[line.product];
+    const link = "#product-" + line.product;
+    const button = function (action, label, text) {
+      return el("button", { type: "button", "data-action": action, "data-index": index, "aria-label": label + " " + p.name }, text);
+    };
+    return el("div", { class: "cart-item" },
+      el("a", { href: link }, el("img", { src: p.front, alt: p.name + " tee" })),
+      el("div", { class: "cart-details" },
+        el("a", { href: link }, p.name),
+        el("small", {}, "Size: " + line.size),
+        el("div", { class: "cart-price" }, money(line.qty * p.price),
+          line.qty > 1 ? el("small", { class: "each" }, " (" + money(p.price) + " each)") : "")),
+      el("div", { class: "qty" }, button("dec", "Decrease quantity of", "\u2212"), el("span", { "aria-live": "polite" }, line.qty), button("inc", "Increase quantity of", "+")),
+      button("remove", "Remove", "Remove"));
+  }
+  function renderCart() {
+    const empty = !cart.length;
+    $("cart-empty").hidden = !empty;
+    $("cart-layout").hidden = empty;
+    $("cart-title").textContent = empty ? "Cart" : "Cart (" + cartCount() + ")";
+    setChildren($("cart-lines"), cart.map(cartLine));
+    $("cart-subtotal").textContent = money(cartTotal());
+    updateOrderLinks();
+    updateBadge();
+  }
+  function initCart() {
+    $("cart-btn").addEventListener("click", function () { location.hash = "cart"; });
+    $("cart-lines").addEventListener("click", function (e) {
+      const button = e.target.closest("button[data-action]");
+      const line = button && cart[+button.dataset.index];
+      if (!line) return;
+      if (button.dataset.action === "inc") line.qty = Math.min(limits.maxQty, line.qty + 1);
+      else if (button.dataset.action === "dec" && line.qty > 1) line.qty -= 1;
+      else cart.splice(+button.dataset.index, 1);
+      saveCart();
+      renderCart();
+    });
+    ["order-name", "order-phone", "order-address"].forEach(function (id) { $(id).addEventListener("input", updateOrderLinks); });
+    [$("order-whatsapp"), $("order-email")].forEach(function (link) {
+      link.addEventListener("click", function (e) {
+        const missing = missingOrderField();
+        if (!cart.length) { e.preventDefault(); $("order-msg").textContent = "Your cart is empty."; }
+        else if (missing) { e.preventDefault(); $("order-msg").textContent = "Add " + missing[1] + " so we can process your order."; $(missing[0]).focus(); }
+        else $("order-msg").textContent = "Your order message is ready to send. We will confirm availability, delivery fee and payment.";
+      });
+    });
+    updateBadge();
+  }
+
+  /* ---------- 3. Shop views ---------- */
+  function productCard(product, index, revealed) {
+    const link = "#product-" + index;
+    const card = el("div", { class: "card" + (revealed ? " is-in" : "") },
+      el("a", { class: "card-image", href: link },
+        el("div", { class: "media" },
+          el("img", { src: product.front, alt: product.name + " tee, front view", decoding: "async" }),
+          el("img", { class: "media-back", src: product.back, alt: product.name + " tee, back view", decoding: "async" }))),
+      el("div", { class: "card-meta" },
+        el("div", { class: "card-title" },
+          el("a", { class: "size-link", href: "#size-guide" }, "Size guide"),
+          el("a", { class: "card-name", href: link }, product.name)),
+        el("span", { class: "card-price" }, money(product.price))));
+    card.style.setProperty("--d", index);
+    return card;
+  }
+  const revealObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add("is-in");
+      revealObserver.unobserve(entry.target);
+    });
+  }, { threshold: .1 });
+
+  function renderShop() {
+    const cards = products.map(function (p, i) { return productCard(p, i, false); });
+    setChildren($("shop-grid"), cards);
+    cards.forEach(function (card) { revealObserver.observe(card); });
+  }
+  function renderHomeGrid() {
+    setChildren($("home-grid"), products.map(function (p, i) { return productCard(p, i, true); }));
+  }
+
+  function ripple(button, e) {
+    const box = button.getBoundingClientRect();
+    const size = Math.max(box.width, box.height) / 4;
+    const x = e.clientX ? e.clientX - box.left : box.width / 2;
+    const y = e.clientX ? e.clientY - box.top : box.height / 2;
+    const dot = el("span", { class: "ripple" });
+    Object.assign(dot.style, { width: size + "px", height: size + "px", left: x - size / 2 + "px", top: y - size / 2 + "px" });
+    button.append(dot);
+    setTimeout(function () { dot.remove(); }, 650);
+  }
+  function makeMagnetic(button) {
+    button.addEventListener("mousemove", function (e) {
+      const box = button.getBoundingClientRect();
+      button.style.transform = "translate(" + (e.clientX - box.left - box.width / 2) * .15 + "px," + (e.clientY - box.top - box.height / 2) * .3 + "px)";
+    });
+    button.addEventListener("mouseleave", function () { button.style.transform = ""; });
+  }
+
+  function renderProduct(index) {
+    const p = products[index];
+    let size = null;
+    const message = el("div", { class: "form-msg", "aria-live": "polite" });
+    const sizeButtons = SIZES.map(function (name) {
+      const button = el("button", { type: "button", "aria-pressed": "false" }, name);
+      button.addEventListener("click", function () {
+        size = name;
+        sizeButtons.forEach(function (b) { b.setAttribute("aria-pressed", b === button); });
+      });
+      return button;
+    });
+    const addButton = el("button", { class: "btn btn--add", type: "button" }, "Add to cart");
+    addButton.addEventListener("click", function (e) {
+      if (!size) { message.textContent = "Choose a size first."; return; }
+      ripple(addButton, e);
+      addToCart(index, size);
+      setChildren(message, ["Added: " + p.name + ", size " + size + ". ", el("a", { href: "#cart" }, "View cart")]);
+    });
+    if (finePointer && !reduceMotion) makeMagnetic(addButton);
+
+    setChildren($("product-view"), [
+      el("div", { class: "gallery" },
+        el("div", { class: "media" }, el("img", { src: p.front, alt: p.name + " tee, front view" })),
+        el("div", { class: "media" }, el("img", { src: p.back, alt: p.name + " tee, back view" })),
+        el("div", { class: "description" },
+          el("h3", {}, "The Fashion Vibe"), el("p", {}, p.vibe),
+          el("h3", {}, "The John 3:16 Meaning"), el("p", {}, p.meaning))),
+      el("div", { class: "info" },
+        el("h1", {}, p.name),
+        el("div", { class: "price" }, money(p.price)),
+        el("p", {}, "Relaxed, boxy cut with the 316 TEES logo on the front and a small mark at the back neck."),
+        el("a", { class: "size-link size-link--pdp", href: "#size-guide" }, "Size guide"),
+        el("div", { class: "size-options", role: "group", "aria-label": "Size" }, sizeButtons),
+        addButton,
+        message),
+    ]);
+  }
+
+  /* ---------- 4. Gallery ---------- */
+  function renderGalleryPage() {
+    setChildren($("gallery-grid"), gallery.map(function (item) {
+      if (item.hero) return el("div", { class: "tile-photo", role: "img", "aria-label": "Model in black tee and silver sunglasses" });
+      if (item.tile !== undefined) return el("div", { class: "tile tile--" + tiles[item.tile].variant }, tiles[item.tile].text);
+      const m = models[item.model];
+      return el("img", { src: m.src, alt: m.alt, loading: "lazy", decoding: "async" });
+    }));
+  }
+
+  // Home gallery strip: auto-scrolls, pauses on mouse hover, sideways wheel or drag moves it.
+  function initMarquee() {
+    const strip = $("marquee");
+    const track = $("marquee-track");
+    const images = [];
+    for (let round = 0; round < 2; round++) { // two copies make the loop seamless
+      models.forEach(function (m) {
+        images.push(el("img", { src: m.src, alt: round ? "" : m.alt, "aria-hidden": round ? "true" : false }));
+      });
+    }
+    setChildren(track, images);
+    if (reduceMotion) return;
+
+    let pos = 0, target = 0, hovering = false, dragging = false, last = 0, lastX = 0;
+    function frame(time) {
+      const dt = Math.min(.05, (time - last) / 1000 || 0);
+      const half = track.scrollWidth / 2;
+      last = time;
+      if (track.offsetParent && half) {
+        if (!hovering && !dragging) pos += half / 45 * dt;
+        const step = target * .18; // eased wheel movement
+        pos += step;
+        target -= step;
+        pos = ((pos % half) + half) % half;
+        track.style.transform = "translate3d(" + -pos + "px,0,0)";
+      }
+      requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+    strip.addEventListener("pointerenter", function (e) { if (e.pointerType === "mouse") hovering = true; });
+    strip.addEventListener("pointerleave", function (e) { if (e.pointerType === "mouse") hovering = false; });
+    strip.addEventListener("wheel", function (e) {
+      let delta = 0;
+      if (e.shiftKey) delta = e.deltaX || e.deltaY;
+      else if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) delta = e.deltaX;
+      else return; // up/down still scrolls the page
+      if (e.deltaMode === 1) delta *= 16;
+      target += delta;
+      e.preventDefault();
+      e.stopPropagation();
+    }, { passive: false });
+    strip.addEventListener("pointerdown", function (e) {
+      dragging = true;
+      lastX = e.clientX;
+      strip.classList.add("is-dragging");
+      try { strip.setPointerCapture(e.pointerId); } catch (err) { /* not supported */ }
+    });
+    strip.addEventListener("pointermove", function (e) {
+      if (!dragging) return;
+      pos -= e.clientX - lastX;
+      lastX = e.clientX;
+    });
+    function endDrag() { dragging = false; strip.classList.remove("is-dragging"); }
+    strip.addEventListener("pointerup", endDrag);
+    strip.addEventListener("pointercancel", endDrag);
+    strip.addEventListener("dragstart", function (e) { e.preventDefault(); });
+  }
+
+  /* ---------- 5. Forms & tools ---------- */
+  function initSizeGuide() {
+    setChildren($("size-rows"), sizeChart.map(function (row) {
+      return el("tr", {}, el("td", {}, row.size), el("td", {}, row.chest[0] + "\u2013" + row.chest[1]), el("td", {}, row.length));
+    }));
+    $("chest-input").addEventListener("input", function () {
+      const chest = +this.value;
+      const match = sizeChart.filter(function (row) { return chest < row.chest[1]; })[0];
+      $("size-result").textContent = !chest || chest < 70 ? "\u2013" : match ? match.size : sizeChart[sizeChart.length - 1].size;
+    });
+  }
+
+  // Spam guards: hidden trap field, minimum fill time, send limit.
+  // Browser-side checks only slow simple bots; see README before connecting a real backend.
+  function initContactForm() {
+    const opened = Date.now();
+    const LAST_KEY = "316lastmsg";
+    $("mail-link").href = "mailto:" + contact.email + "?subject=" + encodeURIComponent("316 TEES enquiry");
+    $("mail-link").textContent = contact.email;
+    $("contact-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const now = Date.now();
+      const out = $("contact-msg");
+      if ($("contact-trap").value || now - opened < 3000) { out.textContent = "Please try again."; return; }
+      if (now - (+storeGet(LAST_KEY) || 0) < 30000) { out.textContent = "Please wait a little before sending another message."; return; }
+      if (!this.checkValidity()) { out.textContent = "Please fill in every field with a valid email."; return; }
+      storeSet(LAST_KEY, String(now));
+      out.textContent = "Thanks, " + clean($("contact-name").value, 60) + ". Your message is ready to send once the form is connected.";
+      this.reset();
+    });
+  }
+
+  /* ---------- 6. Hero ---------- */
+  const hero = $("hero");
+  const heroTitle = $("hero-title");
+  const heroVideo = document.querySelector(".hero-video");
+  let lenis = null;
+
+  function initHeroVideo() {
+    if (!heroVideo) return;
+    const saveData = navigator.connection && navigator.connection.saveData;
+    if (reduceMotion || saveData) { heroVideo.remove(); return; } // the still photo shows instead
+    heroVideo.muted = true;
+    play(heroVideo);
+  }
+  // Scales the headline so its longest line reaches the middle of the hero.
+  function fitHeroTitle() {
+    if (!heroTitle.offsetParent) return;
+    heroTitle.style.fontSize = "100px";
+    let widest = 0;
+    heroTitle.querySelectorAll(".line span").forEach(function (s) { widest = Math.max(widest, s.offsetWidth); });
+    if (!widest) return;
+    const target = innerWidth / 2 - heroTitle.parentNode.offsetLeft;
+    heroTitle.style.fontSize = Math.max(14, Math.min(150, 100 * target / widest)) + "px";
+  }
+  // Desktop only: the hero shrinks and fades as you scroll.
+  let scrollTick = false;
+  function updateHeroScroll() {
+    scrollTick = false;
+    if (!hero.offsetParent) return;
+    if (innerWidth < 768) { hero.style.transform = ""; hero.style.opacity = ""; return; }
+    const progress = Math.min(1, scrollY / (innerHeight * .8));
+    hero.style.transform = "scale(" + (1 - .1 * progress) + ")";
+    hero.style.opacity = 1 - progress;
+  }
+
+  /* ---------- 7. Router & navigation ---------- */
+  const TITLES = { home: "316 TEES", shop: "Shop", gallery: "Gallery", "size-guide": "Size guide", about: "About", contact: "Contact", cart: "Cart" };
+  let backTo = null; // where the Size guide "Back" arrow returns to
+
+  // Only known routes are accepted; anything else falls back to home.
+  function parseRoute(hash) {
+    const name = hash.replace(/^#/, "") || "home";
+    const match = /^product-(\d{1,2})$/.exec(name);
+    if (match && products[+match[1]]) return { page: "product", index: +match[1], hash: name };
+    if (Object.prototype.hasOwnProperty.call(TITLES, name)) return { page: name, hash: name };
+    return { page: "home", hash: "home" };
+  }
+  function updateSizeBack() {
+    const link = $("size-back");
+    const route = backTo && parseRoute(backTo);
+    link.hidden = !route;
+    if (!route) return;
+    link.href = "#" + route.hash;
+    link.textContent = "\u2190 Back to " + (route.page === "product" ? "product" : route.page === "shop" ? "shop" : "home");
+  }
+  function showRoute() {
+    const route = parseRoute(location.hash);
+    document.querySelectorAll(".page").forEach(function (page) {
+      page.classList.toggle("is-active", page.dataset.page === route.page);
+    });
+    $("nav-links").querySelectorAll("a").forEach(function (a) {
+      if (a.getAttribute("href") === "#" + (route.page === "product" ? "shop" : route.hash)) a.setAttribute("aria-current", "page");
+      else a.removeAttribute("aria-current");
+    });
+    if (route.page === "product") renderProduct(route.index);
+    if (route.page === "shop") renderShop();
+    if (route.page === "cart") renderCart();
+    if (route.page === "size-guide") updateSizeBack();
+    document.title = route.page === "home" ? TITLES.home : (TITLES[route.page] || "Product") + " | 316 TEES";
+    $("nav-links").classList.remove("is-open");
+    $("menu-btn").setAttribute("aria-expanded", "false");
+    if (lenis) lenis.scrollTo(0, { immediate: true }); else window.scrollTo(0, 0);
+    updateHeroScroll();
+    fitHeroTitle();
+    if (heroVideo && heroVideo.isConnected) { if (route.page === "home") play(heroVideo); else heroVideo.pause(); }
+    if (route.page !== "home") $("main").focus({ preventScroll: true });
+    if (route.page !== "size-guide") backTo = null;
+  }
+  function initNavigation() {
+    $("menu-btn").addEventListener("click", function () {
+      const open = $("nav-links").classList.toggle("is-open");
+      this.setAttribute("aria-expanded", open);
+    });
+    // Remember where a "Size guide" link was clicked, so the Back arrow can return there.
+    document.addEventListener("click", function (e) {
+      const link = e.target.closest && e.target.closest("a");
+      if (link) backTo = link.classList.contains("size-link") ? (location.hash || "#home") : null;
+    });
+    addEventListener("hashchange", showRoute);
+    addEventListener("resize", function () { fitHeroTitle(); updateHeroScroll(); });
+    addEventListener("scroll", function () {
+      if (!scrollTick) { scrollTick = true; requestAnimationFrame(updateHeroScroll); }
+    }, { passive: true });
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitHeroTitle);
+  }
+
+  /* ---------- 8. Start ---------- */
+  if (window.Lenis && !reduceMotion) {
+    lenis = new Lenis();
+    requestAnimationFrame(function raf(time) { lenis.raf(time); requestAnimationFrame(raf); });
+  }
+  $("about-photo").src = models[0].src;
+  $("about-photo").alt = models[0].alt;
+  renderHomeGrid();
+  renderGalleryPage();
+  initMarquee();
+  initSizeGuide();
+  initContactForm();
+  initCart();
+  initHeroVideo();
+  initNavigation();
+  showRoute();
 })();
